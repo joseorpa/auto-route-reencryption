@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: {{ route_name }}
+spec:
+  host: {{ route_host}
+  to:
+    kind: Service
+    name: {{ service_name }}
+  tls:
+    termination: reencrypt        
+    key: |-
+"{{ lookup('file', 'path/to/key') }}"
+    certificate: |-
+"{{ lookup('file', 'path/to/cert') }}" 
+    caCertificate: |-
+"{{ lookup('file', 'path/to/ca') }}"
+    destinationCACertificate: |-  
+"{{ lookup('file', 'path/to/destCA') }}"
