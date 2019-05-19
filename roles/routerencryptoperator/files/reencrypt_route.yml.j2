@@ -1,3 +1,4 @@
+#jinja2: lstrip_blocks: True
 apiVersion: v1
 kind: Route
 metadata:
@@ -10,10 +11,10 @@ spec:
   tls:
     termination: reencrypt        
     key: |-
-"{{ lookup('file', 'path/to/key') }}"
+"{{ lookup('file', 'temp/key') }}"
     certificate: |-
-"{{ lookup('file', 'path/to/cert') }}" 
+"{{ lookup('file', 'temp/cert') }}" 
     caCertificate: |-
-"{{ lookup('file', 'path/to/ca') }}"
+"{{ lookup('file', 'temp/ca') }}"
     destinationCACertificate: |-  
-"{{ lookup('file', 'path/to/destCA') }}"
+"{{ lookup('file', 'temp/destCA') }}"

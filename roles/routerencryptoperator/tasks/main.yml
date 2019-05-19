@@ -1,2 +1,22 @@
 ---
 # tasks file for routerencryptoperator
+- name: Create temp dir
+  file:
+    path: "{{ temp_dir }}"
+    state: directory
+- name: Set secret in a variable
+- name: Set route_name in a variable
+- name: Set router_host in a variable
+- name: Set service_name in a variable
+- name: Parse secret setting cert key ca destca
+- name: Create route.yaml from template and vars
+  template:
+    src: "{{ item }}.j2"
+    dest: "{{ temp_dir }}/{{ item }}"
+    mode: 0600
+  with_items:
+    - reencrypt_route.yml
+  register: reo_router_config
+- name: remove the old route
+- name: create the new route
+- name: remove temp dir
