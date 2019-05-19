@@ -1,0 +1,7 @@
+apiVersion: joseorpa.operators.io/v1alpha1
+kind: RouterEncryptOperator
+metadata:
+  name: example-routerencryptoperator
+spec:
+  # Add fields here
+  size: 3

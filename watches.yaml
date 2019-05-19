@@ -1,0 +1,5 @@
+---
+- version: v1alpha1
+  group: joseorpa.operators.io
+  kind: RouterEncryptOperator
+  playbook: /opt/ansible/playbook.yml
